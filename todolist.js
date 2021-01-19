@@ -7,7 +7,7 @@ function ajoutTodo() {
     let data = {
         description: todo.value
     }
-    fetch('http://127.0.0.1:5000/todo', {
+    fetch('http://jlegall.pythonanywhere.com/todo', {
         method: 'POST',
         headers: {
             "Content-type": 'application/json'
@@ -17,14 +17,14 @@ function ajoutTodo() {
 }
 
 function deleteTodo(indice) {
-    fetch('http://127.0.0.1:5000/todo/' + indice, {
+    fetch('http://jlegall.pythonanywhere.com/todo' + indice, {
         method: 'DELETE'})
         .then(response => rafraichirHTML())
 }
 
 function rafraichirHTML() {
     todo.value = "";
-    fetch('http://127.0.0.1:5000/todo')
+    fetch('http://jlegall.pythonanywhere.com/todo')
         .then(response => response.json())
         .then(todolist => {
             elementTODOLIST.innerHTML= "";
