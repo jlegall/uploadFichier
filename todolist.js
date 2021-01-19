@@ -17,7 +17,7 @@ function ajoutTodo() {
 }
 
 function deleteTodo(indice) {
-    fetch('https://jlegall.pythonanywhere.com/todo' + indice, {
+    fetch('https://jlegall.pythonanywhere.com/todo/' + indice, {
         method: 'DELETE'})
         .then(response => rafraichirHTML())
 }
